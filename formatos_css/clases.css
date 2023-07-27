@@ -1,0 +1,503 @@
+.header-2 {
+    width: 100%;
+    background: #00A499;
+    height: 155px;
+    border-bottom-color: #ea7600;
+}
+
+table {
+    table-layout: auto;
+    width: 900px;
+    text-align: auto;
+    border-spacing: 30px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer {
+    margin-top: auto;
+}
+
+.bordered {
+    border: solid rgb(84, 213, 216) 2px;
+    border-spacing: 0;
+    border-collapse: separate;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 19px;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.filas {
+    width: 90%;
+    padding: 5%;
+}
+
+th {
+    font-size: 1.5rem;
+    border-bottom: 2px;
+    border-bottom-color: solid rgb(235, 17, 235) 2px;
+}
+
+.text-center {
+    text-align: center;
+    width: 100%;
+    top: 100px;
+    position: absolute;
+    text-decoration: underline solid rgb(238, 150, 192) 2px;
+}
+
+.h4t {
+    font-size: 2rem;
+    font-family: Jacques Francois;
+}
+
+.logo {
+    width: 220px;
+    height: 220px;
+    float: left;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 1%;
+}
+
+.img-responsive {
+    width: 70%;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+.bordered2 {
+    border: solid rgb(84, 213, 216) 2px;
+    border-collapse: collapse;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 19px;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 90px;
+}
+
+nav {
+    height: 70px;
+    width: 100%;
+    float: left;
+    text-align: right;
+    padding-top: 0px;
+}
+
+.ancho {
+    width: 80%;
+    height: 70px;
+    margin: auto;
+}
+
+.logo p a {
+    font-size: 40px;
+}
+
+nav ul li {
+    display: inline;
+    text-decoration: none;
+    padding-left: 0px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+tr.abajo>td {
+    padding-left: 1.5em;
+    padding-bottom: 1.5em;
+    padding-right: 1.5em;
+}
+
+body {
+    border-width: 2rem;
+    border-color: solid rgb(84, 213, 216) 2px;
+    background-color: solid rgb(84, 213, 216);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.contorno {
+    border: 15px solid rgb(84, 213, 216);
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+    outline-offset: 0.5em;
+    left: 0px;
+    top: 0px;
+}
+
+html {
+    background: url("imagenes\bg.jpg") no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.botonesposi {
+    margin-top: 10px;
+    float: left;
+    text-align: center;
+    align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Open Sans', sans-serif;
+}
+
+
+/*:::::Pie de Pagina*/
+
+.pie-pagina {
+    width: 100%;
+    height: 153px;
+    background-color: #00A499;
+}
+
+.pie-pagina .grupo-1 {
+    width: 100%;
+    max-width: 1600px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 50px;
+    padding: 45px 0px;
+}
+
+.pie-pagina .grupo-1 .box figure {
+    width: 100%;
+    height: 100%;
+    background-color: #FFF7F9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pie-pagina .grupo-1 .box figure img {
+    width: 200px;
+}
+
+.pie-pagina .grupo-1 .box h2 {
+    color: rgb(0, 0, 0);
+    margin-bottom: 25px;
+    font-size: 20px;
+}
+
+.pie-pagina .grupo-1 .box p {
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+.pie-pagina .grupo-1 .red-social a {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: rgb(0, 0, 0);
+    margin-right: 10px;
+    background-color: #FFF7F9;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.pie-pagina .grupo-1 .red-social a:hover {
+    color: #f7a1be;
+}
+
+.pie-pagina .grupo-2 {
+    background-color: #ffffff;
+    padding: 15px 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.pie-pagina .grupo-2 small {
+    font-size: 15px;
+}
+
+@media screen and (max-width:800px) {
+    .pie-pagina .grupo-1 {
+        width: 90%;
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 30px;
+        padding: 35px 0px;
+    }
+}
+
+.body2 {
+    border-width: 2rem;
+    border-color: solid rgb(84, 213, 216) 2px;
+    background-color: solid rgb(84, 213, 216);
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo2 {
+    width: 140px;
+    height: 70px;
+    float: right;
+    position: absolute;
+    top: 5px;
+    left: 860px;
+    box-sizing: border-box;
+}
+
+.divindex {
+    background-color: lightpink;
+    color: white;
+    padding: 1000px;
+    padding-top: 10rem;
+}
+
+.h2index {
+    font-size: 2rem;
+    font-style: italic;
+}
+
+button {
+    transition-duration: 0.4s;
+    background-color: #ea7600;
+    border: none;
+    color: rgb(2, 2, 2);
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.button2 {
+    transition-duration: 0.4s;
+    background-color: #ea7600;
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+.bodycat {
+    background-color: #FFF7F9;
+}
+
+.compra {
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    background-color: salmon;
+    line-height: 45px;
+    color: rgb(255, 255, 255);
+    margin-left: 1600px;
+    text-align: center;
+    transition: all 300ms ease;
+}
+
+.button3 {
+    transition-duration: 0.4s;
+    background-color: #ea7600;
+    border: none;
+    border-radius: 19px;
+    color: white;
+    padding: 10px 35px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    margin-left: 16rem;
+}
+
+.button3:hover {
+    background-color: white;
+    color: black;
+}
+
+.divini {
+    right: 0px;
+    position: absolute;
+    padding-right: 45px;
+    top: 0px;
+    padding-top: 30px;
+}
+
+.form-group {
+    padding-left: 1rem;
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+}
+
+.indexfondo {
+    background-color: #ffffff;
+    padding: 7% 35%;
+}
+
+.indextitulo {
+    font-size: 10rem;
+    color: #00a4a9;
+}
+
+.pie-paginaadm {
+    width: 100%;
+    height: 100px;
+    background-color: #ffffff;
+}
+
+.pie-paginaadm .grupo-3 {
+    background-color: #ffffff;
+    padding: 40px 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+.pie-paginaadm .grupo-3 small {
+    font-size: 15px;
+}
+
+.fondoadm {
+    background-color: #FFF7F9;
+}
+
+.productotd {
+    width: 700px;
+    height: 650px;
+    padding-bottom: 0rem;
+}
+
+.boxproducto {
+    width: 800px;
+    height: 600px;
+    margin-top: 1500px;
+}
+
+.tdhd {
+    width: 400px;
+}
+
+.formproducto {
+    margin-left: 20rem;
+}
+
+.borderedd {
+    border: solid transparent 2px;
+    border-collapse: collapse;
+    padding: 1%;
+    border-radius: 19px;
+    margin-left: 24rem;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 45px;
+}
+
+.borderedt {
+    border: solid transparent 2px;
+    color: #000000;
+    padding: 1%;
+    border-radius: 19px;
+    margin-left: 5rem;
+    margin-right: auto;
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+.text-color {
+    text-align: left;
+    text-decoration: underline solid rgb(0, 0, 0) 2px;
+    color: #000000;
+}
+
+.text-color2 {
+    text-align: left;
+    color: #000000;
+}
+
+.text-color3 {
+    text-align: center;
+    text-decoration: underline solid rgb(0, 0, 0) 2px;
+    color: #000000;
+}
+
+.thtd {
+    border-bottom: solid rgb(84, 213, 216) 2px;
+}
+
+.filas2 {
+    width: 20%;
+    padding: 1%;
+}
+
+.bordered4 {
+    border: solid rgb(84, 213, 216) 2px;
+    border-spacing: 0;
+    border-collapse: separate;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 19px;
+    padding: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.logodeabajo {
+    color: #ffffff;
+}
+
+.logoinclass {
+    width: 400px;
+    height: 400px;
+}
+
+#page-container {
+    position: relative;
+    min-height: 100vh;
+}
+
+#content-wrap {
+    padding-bottom: 2.5rem;
+    /* Footer height */
+}
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;
+    /* Footer height */
+}
+
+.indexfondo2 {
+    background-color: #ffffff;
+    padding: 1% 0%;
+    margin-left: 0rem;
+    margin-bottom: 2rem;
+}
