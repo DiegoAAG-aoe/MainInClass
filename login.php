@@ -3,7 +3,7 @@ session_start();
 include('include/config.php');
 extract($_REQUEST);
 if (isset($save)) {
-  $que = mysqli_query($con, "select * from adminsis, jefec, secretariac, profesor where Adm_Correo ='$email' && Adm_contraseña ='$pass' || Jef_Correo ='$email' && Jef_contraseña ='$pass' ||Sc_Correo ='$email' && Sc_contraseña ='$pass' ||Prof_Correo ='$email' && Prof_contraseña ='$pass' ");
+  $que = mysqli_query($con, "select * from adminsis, jefec, secretariac, profesor where Adm_Correo ='$email' && Adm_contrasena ='$pass' || Jef_Correo ='$email' && Jef_contrasena ='$pass' ||Sc_Correo ='$email' && Sc_contrasena ='$pass' ||Prof_Correo ='$email' && Prof_contrasena ='$pass' ");
   $row = mysqli_fetch_array($que);
   $Adm_Correo = $row['Adm_Correo'];
   $Jef_Correo = $row['Jef_Correo'];

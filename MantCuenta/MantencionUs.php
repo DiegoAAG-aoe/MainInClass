@@ -24,7 +24,7 @@ include ('../include/sidebar.php');
   <a href="Jefe.php"><button class="button button3">Jefe</button></a>
 </div>
 <footer class="pie-pagina">
-<img src="../Logos/CNA7.png" alt="7años" class="logodeabajo" ></img>
+<img src="../Logos/CNA7.png" alt="7anos" class="logodeabajo" ></img>
 </footer>
 
 </html>

@@ -28,7 +28,7 @@ include('../include/sidebar.php');
         <div >
             <div>
                 <div>
-                    <a class="btn btn-info" href="add_estu.php">Añadir Administrador</a>
+                    <a class="btn btn-info" href="add_estu.php">Anadir Administrador</a>
                     <h2 style="text-align: center;">Gestion Administrador</h2>
                 </div>
                 <div class="body">
@@ -79,7 +79,7 @@ include('../include/sidebar.php');
 
 
 <footer class="pie-pagina">
-<img src="../Logos/CNA7.png" alt="7años" class="logodeabajo" ></img>
+<img src="../Logos/CNA7.png" alt="7anos" class="logodeabajo" ></img>
 </footer>
 
 </html>

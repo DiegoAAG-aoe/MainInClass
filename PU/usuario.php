@@ -20,7 +20,7 @@ include ('../include/sidebar.php');
 
 ?>
 <footer class="pie-pagina">
-<img src="../Logos/CNA7.png" alt="7años" class="logodeabajo" ></img>
+<img src="../Logos/CNA7.png" alt="7anos" class="logodeabajo" ></img>
 </footer>
 
 </html>

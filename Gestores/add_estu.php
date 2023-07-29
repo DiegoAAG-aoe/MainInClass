@@ -1,19 +1,22 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 include('../include/header.php');
 extract($_REQUEST);
-include ('../include/config.php');
+include ('../conexion.php');
 
 
 
 if (isset($submit)) {
     $query = "insert into estudiante(Es_Rut, Es_Nombre, Es_Correo) values('$Es_Rut', '$Es_Nombre','$Es_Correo')";
-    $r = mysqli_query($con, $query);
+    $r = mysqli_query($conexion, $query);
 
     //En caso de ingresarse de manera correcta se guardara dentro de msg un mensaje de confirmacion de ingreso.
     if ($r) {
         $msg = '<div class="alert alert-success alert-dismissible">
     <a href="ver_estu.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Exito!</strong> Informacion añadida de manera correcta.
+    <strong>Exito!</strong> Informacion anadida de manera correcta.
   </div>';
 
     }
@@ -21,7 +24,7 @@ if (isset($submit)) {
     else {
         $msg = '<div class="alert alert-danger alert-dismissible">
     <a href="ver_estu.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Error!</strong> Informacion no añadida.
+    <strong>Error!</strong> Informacion no anadida.
   </div>';
 
     }
@@ -42,7 +45,7 @@ if (isset($submit)) {
                 <div class="card">
                     <div class="header">
                         <h2 style="text-align: center;">
-                            Añadir Estudiante
+                            Anadir Estudiante
 
                         </h2>
 
@@ -55,12 +58,12 @@ if (isset($submit)) {
                                 <div class="col-lg-6 col-md-3 col-sm-3 col-xs-6">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <input required type="text" name="Es_Rut" class="form-control">
+                                            <input required type="text" name="Es_Nombre" class="form-control">
                                             <label class="form-label">Nombre del Estudiante</label>
                                         </div>
 
                                         <div class="form-line">
-                                            <input required type="text" name="Es_Nombre" class="form-control">
+                                            <input required type="text" name="Es_Rut" class="form-control">
                                             <label class="form-label">RUT</label>
                                         </div>
 
