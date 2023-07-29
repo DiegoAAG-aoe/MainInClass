@@ -30,7 +30,7 @@
                 </a>
             </a>
         </div>
-        <h5 style="color:white;text-align: center;">   Menu del Usuario</h5>
+        
     </div>
 
 </header>
