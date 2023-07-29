@@ -11,31 +11,28 @@
     <link rel="stylesheet" href="../formatos_css/clases.css" media="screen">
     <script src="https://kit.fontawesome.com/eb496ab1a0.js" crossorigin="anonymous"></script>
     <script src="https://kit.fontawesome.com/074b956457.js" crossorigin="anonymous"></script>
-    <script type="text/javascript">
-
-
-
-
-</script>
-
 </head>
+
 <?php
 include ('../include/header.php');
 ?>
+
 <script type="text/javascript">
 //Funcion en especifica para poder hacer uso del 'delete' para poder borrar valores como tal con su respectivo llamado hacia el archivo como tal
 function delet(id)
   {
     if(confirm("you want to delete ?"))
     {
-      window.location.href='eliminar_estu.php?x='+id;
+      window.location.href='eliminar_estu.php?xxx='+id;
     }
   }
 
 </script>
+
 <?php
 include('../include/sidebar.php');
 ?>
+
 <section class="content">
     <div class="row clearfix">
         <div >

@@ -4,7 +4,7 @@ include ('../conexion.php');
 
 
 //Recibe la id que se le envia en la seccion de "view" que se usara para determinar que cosa en especifico eliminar.
-$sid=$_GET['x'];
+$sid=$_GET['xxx'];
 //Elimina en totalidad dato de su respectiva tabla en la base de datos, en base a la comparacion echa en el where.
 mysqli_query($conexion,"delete from estcarre where Cr_Estudiante='$sid'");
 mysqli_query($conexion,"delete from estrec where Estc_Estudiante='$sid'");

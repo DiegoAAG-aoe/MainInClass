@@ -51,7 +51,7 @@ if (isset($submit)) {
                             <form method="post" enctype="multipart/form-data">
                                 <div class="row clearfix">
 
-                                <div class="col-lg-6 col-md-3 col-sm-3 col-xs-6">
+                                <div class="col-lg-8 col-md-2 col-sm-3 col-xs-6">
                                         <div class="form-group form-float">
                                             <div class="form-line">
                                                 <input required type="text" name="adm_rut" value="<?php echo $id;?>" class="form-control">
@@ -80,4 +80,7 @@ if (isset($submit)) {
             </div>
         </div>
     </section>
-       
+<br></br>
+<footer class="pie-pagina">
+<img src="../Logos/CNA7.png" alt="7anos" class="logodeabajo" ></img>
+</footer>    
