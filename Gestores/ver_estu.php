@@ -28,8 +28,8 @@ include('../include/sidebar.php');
         <div >
             <div>
                 <div>
-                    <a class="btn btn-info" href="add_estu.php">Añadir Administrador</a>
-                    <h2 style="text-align: center;">Gestion Administrador</h2>
+                    <a class="btn btn-info" href="add_estu.php">Añadir Estudiante</a>
+                    <h2 style="text-align: center;">Gestion Estudiante</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
