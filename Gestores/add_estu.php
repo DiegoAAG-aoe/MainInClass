@@ -33,7 +33,7 @@ if (isset($submit)) {
 
 ?>
 
-<!--Barra lateral de acceso a todas las funciones/informacion de administrador  -->
+<!--Barra lateral de acceso a todas las funciones/aainformacion de administrador  -->
 
 
 <!-- Seccion estetica y de orden -->
