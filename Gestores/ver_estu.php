@@ -43,10 +43,10 @@ include('../include/sidebar.php');
                             <tbody>
                                 <?php
                                 include ('../include/config.php');
-                                $query = mysqli_query($con, "select * from adminsis");
+                                $query = mysqli_query($con, "select * from estudiante");
                                 while ($res = mysqli_fetch_array($query)) {
-                                    $id = $res['Adm_Rut'];
-                                    $nom = $res['Adm_Nombre'];
+                                    $id = $res['Es_Rut'];
+                                    $nom = $res['Es_Nombre'];
                                 ?>
                                 <tr>
                                     <td><?php echo $id; ?></td>
