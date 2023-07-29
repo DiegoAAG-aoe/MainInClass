@@ -1,8 +1,7 @@
 <?php
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+
 include('../include/header.php');
+include ('../include/sidebar.php');
 extract($_REQUEST);
 include ('../conexion.php');
 
@@ -15,9 +14,10 @@ if (isset($submit)) {
     //En caso de ingresarse de manera correcta se guardara dentro de msg un mensaje de confirmacion de ingreso.
     if ($r) {
         $msg = '<div class="alert alert-success alert-dismissible">
-    <a href="ver_estu.php" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-    <strong>Exito!</strong> Informacion anadida de manera correcta.
+    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+    <strong>Success!</strong> Estudiante añadido correctamente.
   </div>';
+    echo "<script>window.location.href='ver_estu.php';</script>";
 
     }
     //En caso de ingresarse de manera incorrecta se guardara dentro de msg un mensaje de fallo de ingreso.
@@ -44,18 +44,17 @@ if (isset($submit)) {
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <div class="card">
                     <div class="header">
-                        <h2 style="text-align: center;">
+                        <h2 style="text-align: center;background-color:transparent;">
                             Anadir Estudiante
-
                         </h2>
 
                     </div>
                     <!-- Seccion del html donde se le pide el ingreso de datos al usuario-->
                     <div class="body">
                         <form method="post" enctype="multipart/form-data">
-                            <div class="row clearfix">
+                            <div class="row clearfix" style="background-color:#ea7600;">
 
-                                <div class="col-lg-6 col-md-3 col-sm-3 col-xs-6">
+                                <div class="col-lg-8 col-md-2 col-sm-3 col-xs-6">
                                     <div class="form-group form-float">
                                         <div class="form-line">
                                             <input required type="text" name="Es_Nombre" class="form-control">
@@ -97,4 +96,9 @@ if (isset($submit)) {
     </div>
     </div>
 </section>
+<br></br>
+<footer class="pie-pagina">
+<img src="../Logos/CNA7.png" alt="7anos" class="logodeabajo" ></img>
+</footer>
+
 
