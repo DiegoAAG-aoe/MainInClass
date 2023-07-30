@@ -62,9 +62,9 @@ include('../include/sidebar.php');
                                     <td><?php echo $id; ?></td>
                                     <td><?php echo $nom; ?></td>
                                     <td>
-                                        <a class='btn btn-info' href="act_estu.php?id=<?php echo $id; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class='btn btn-info' href="act_Asig.php?id=<?php echo $id; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
                                         <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
-                                        <a class='btn btn-success' href="ver_curso.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a>
+                                        <a class='btn btn-success' href="../Gestores/ver_curso.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a>
                                     </td>
                                 </tr>
                                 <?php } ?>
