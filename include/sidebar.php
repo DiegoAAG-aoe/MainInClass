@@ -89,6 +89,7 @@ if ($tipo == 1) {
   <a href="../Mantenedores/MantenedorEstadoEstu.php">Mantención Estado Estudiantes</a>
   <a href="../Mantenedores/MantenedorBH.php">Mantención BloqueHorario</a>
   <a href="../MantCuenta/MantencionUs.php">Mantención Usuarios</a>
+  <a href="../MantBasic/ver_asig.php">Asignaturas</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
 
