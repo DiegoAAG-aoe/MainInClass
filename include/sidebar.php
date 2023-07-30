@@ -82,14 +82,14 @@ if ($tipo == 1) {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <b style="color:black"><?php echo $name; ?></b>
-  <a href="#">Inicio</a>
+  <a href="../PU/usuario.php">Inicio</a>
   <a href="#">Lista de Usuarios</a>
-  <a href="../Mantenedores/MantenedorAsignatura.php">Mantención Asignaturas</a>
   <a href="../Mantenedores/MantenedorPeriodo.php">Mantención Periodos</a>
   <a href="../Mantenedores/MantenedorEstadoEstu.php">Mantención Estado Estudiantes</a>
   <a href="../Mantenedores/MantenedorBH.php">Mantención BloqueHorario</a>
   <a href="../MantCuenta/MantencionUs.php">Mantención Usuarios</a>
-  <a href="../MantBasic/ver_asig.php">Asignaturas</a>
+  <a href="../MantBasic/ver_asig.php">Mantención Asignaturas</a>
+  <a href="../Gestores/ver_cur.php">Cursos</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
 
@@ -106,6 +106,7 @@ if ($tipo == 1) {
 <div id="mySidenav" class="sidenav">
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <b style="color:black"><?php echo $name; ?></b>
+  <a href="../PU/usuario.php">Inicio</a>
   <a href="#">Descargar Listado Estudiantes</a>
   <a href="#">Descargar Listado Cursos</a>
   <a href="#">Generar Estadística de Clases por semestre</a>
@@ -127,7 +128,7 @@ if ($tipo == 1) {
 <div id="mySidenav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <b style="color:black"><?php echo $name; ?></b>
-  <a href="secretaria.php">Inicio</a>
+<a href="../PU/usuario.php">Inicio</a>
   <a href="#">Horario Docente</a>
   <a href="#">Cursos</a>
   <a href="../excelsubida/excel.php">Subir Archivos</a>
@@ -149,7 +150,7 @@ if ($tipo == 1) {
 <div id="mySidenav" class="sidenav">
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <b style="color:black"><?php echo $name; ?></b>
-  <a href="#">Inicio</a>
+<a href="../PU/usuario.php">Inicio</a>
   <a href="#">Cursos</a>
   <a href="#">Listado Asistencia</a>
   <a href="#">Mensajes</a>

@@ -14,7 +14,12 @@
 </head>
 
 <?php
-include ('../include/header.php');
+include('../include/header.php');
+extract($_REQUEST);
+include ('../conexion.php');
+
+$id=$_REQUEST['id'];
+
 ?>
 
 <script type="text/javascript">
@@ -23,7 +28,7 @@ function delet(id)
   {
     if(confirm("you want to delete ?"))
     {
-      window.location.href="eliminar_estu.php?xxx="+id;
+      window.location.href="eliminar_cur.php?xxx="+id;
     }
   }
 
@@ -37,32 +42,36 @@ include('../include/sidebar.php');
     <div class="row clearfix">
         <div >
             <div>
+                
                 <div>
-                    <a class="btn btn-info" href="add_estu.php">Anadir Estudiante</a>
-                    <h2 style="text-align: center;margin-bottom:2.5rem">Gestion Estudiante</h2>
+                    <a class="btn btn-info" href="add_cur_asig.php?id1=<?php echo $id; ?>">Anadir Curso asociado a la Asignatura</a>
+                    <h2 style="text-align: center;margin-bottom:2.5rem">Gestion Curso</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Rut</th>
-                                    <th>Nombre</th>
+                                    <th>Seccion</th>
+                                    <th>Tipo</th>
+                                    <th>Periodo</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                include ('../include/config.php');
-                                $query = mysqli_query($con, "select * from estudiante");
-                                while ($res = mysqli_fetch_array($query)) {
-                                    $id = $res['Es_Rut'];
-                                    $nom = $res['Es_Nombre'];
-                                ?>
+                            <?php
+                    include ('../include/config.php');
+                    $query = mysqli_query($con, "select * from curso where Cur_Asignatura = '$id' ");
+                    while ($res = mysqli_fetch_array($query)) {
+                        $id1 = $res['Cur_Periodo'];
+                        $id2 = $res['Cur_Tipo'];
+                        $id3 = $res['Cur_Secc'];
+                    ?>
                                 <tr>
-                                    <td><?php echo $id; ?></td>
-                                    <td><?php echo $nom; ?></td>
+                                    <td><?php echo $id3; ?></td>
+                                    <td><?php echo $id2; ?></td>
+                                    <td><?php echo $id1; ?></td>
                                     <td>
-                                        <a class='btn btn-info' href="act_estu.php?id=<?php echo $id; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class='btn btn-info' href="act_cur_asig.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
                                         <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
                                         <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                     </td>

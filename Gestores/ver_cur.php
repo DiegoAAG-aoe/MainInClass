@@ -38,31 +38,37 @@ include('../include/sidebar.php');
         <div >
             <div>
                 <div>
-                    <a class="btn btn-info" href="add_estu.php">Anadir Estudiante</a>
-                    <h2 style="text-align: center;margin-bottom:2.5rem">Gestion Estudiante</h2>
+                    <a class="btn btn-info" href="add_cur.php">Añadir Curso</a>
+                    <h2 style="text-align: center;margin-bottom:2.5rem">Gestion Cursos</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                    <th>Rut</th>
-                                    <th>Nombre</th>
+                                    <th>Asignatura</th>
+                                    <th>Tipo</th>
+                                    <th>Seccion</th>
+                                    <th>Periodo</th>                              
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include ('../include/config.php');
-                                $query = mysqli_query($con, "select * from estudiante");
+                                $query = mysqli_query($con, "select * from curso");
                                 while ($res = mysqli_fetch_array($query)) {
-                                    $id = $res['Es_Rut'];
-                                    $nom = $res['Es_Nombre'];
+                                    $id = $res['Cur_Asignatura'];
+                                    $tip = $res['Cur_Tipo'];
+                                    $secc = $res['Cur_Secc'];
+                                    $per = $res['Cur_Periodo'];
                                 ?>
                                 <tr>
                                     <td><?php echo $id; ?></td>
-                                    <td><?php echo $nom; ?></td>
+                                    <td><?php echo $tip; ?></td>
+                                    <td><?php echo $secc; ?></td>
+                                    <td><?php echo $per; ?></td>
                                     <td>
-                                        <a class='btn btn-info' href="act_estu.php?id=<?php echo $id; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class='btn btn-info' href="act_cur.php?id=<?php echo $id; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
                                         <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
                                         <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                     </td>
