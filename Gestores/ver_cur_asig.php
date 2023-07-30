@@ -71,8 +71,8 @@ include('../include/sidebar.php');
                                     <td><?php echo $id2; ?></td>
                                     <td><?php echo $id1; ?></td>
                                     <td>
-                                        <a class='btn btn-info' href="act_cur_asig.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
-                                        <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
+                                        <a class='btn btn-info' href="act_cur_asig.php?id1=<?php echo $id; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class='btn btn-danger' onclick="delet('<?php echo $id1; ?>', '<?php echo $id2; ?>', '<?php echo $id3; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
                                         <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                     </td>
                                 </tr>
