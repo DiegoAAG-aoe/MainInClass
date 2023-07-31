@@ -27,7 +27,7 @@ if (isset($submit)) {
     $query2 = "update estasist set Est_Secc = '$Cur_Secc', Est_Tipo = '$cur' where Est_Asistencia='$id' AND Est_Tipo='$tipo' AND Est_Secc='$seccion'";
     $query3 = "update inscrito set Ins_Secc = '$Cur_Secc', Ins_Tipo = '$cur' where Ins_Asignatura='$id' AND Ins_Tipo='$tipo' AND Ins_Secc='$seccion'";
     $query4 = "update horario set Hor_Secc = '$Cur_Secc', Hor_Tipo = '$cur' where Hor_Asignatura='$id' AND Hor_Tipo='$tipo' AND Hor_Secc='$seccion'";
-    $query = "update curso set Cur_Secc = '$Cur_Secc', Cur_Tipo = '$cur' where Cur_Asignatura='$id' AND Cur_Tipo='$tipo' AND Cur_Secc='$seccion'";
+    $query  = "update curso set Cur_Secc = '$Cur_Secc', Cur_Tipo = '$cur' where Cur_Asignatura='$id' AND Cur_Tipo='$tipo' AND Cur_Secc='$seccion'";
 
     mysqli_query($conexion, $query1);
     mysqli_query($conexion, $query2);

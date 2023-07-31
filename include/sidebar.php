@@ -3,8 +3,10 @@ include('../conexion.php');
      session_start();
 $email=$_SESSION['email'];
 $tipo=$_SESSION['tipo'];
+
 $query=mysqli_query($conexion,"select * from adminsis, jefec, secretariac, profesor where Adm_Correo ='$email' || Jef_Correo ='$email' ||Sc_Correo ='$email' ||Prof_Correo ='$email' ");
 $res1=mysqli_fetch_array($query);
+
 
 
 if ($tipo == 1) {
@@ -151,7 +153,7 @@ if ($tipo == 1) {
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <b style="color:black"><?php echo $name; ?></b>
 <a href="../PU/usuario.php">Inicio</a>
-  <a href="#">Cursos</a>
+  <a href="../Profesor/ver_cur_asistencia.php">Cursos</a>
   <a href="#">Listado Asistencia</a>
   <a href="#">Mensajes</a>
   <a href="../include/logout.php">Cerrar Sesión</a>

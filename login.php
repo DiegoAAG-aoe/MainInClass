@@ -9,6 +9,7 @@ if (isset($save)) {
   $Jef_Correo = $row['Jef_Correo'];
   $Sc_Correo = $row['Sc_Correo'];
   $Prof_Correo = $row['Prof_Correo'];
+  $rut = $row['Prof_Rut'];
   if ($row) {
     if ($Adm_Correo == $email) {
       $_SESSION['email'] = $email;
@@ -25,6 +26,7 @@ if (isset($save)) {
     } else {
       $_SESSION['email'] = $email;
       $_SESSION['tipo'] = 4;
+      $_SESSION['rut'] = $rut;
       header('location:PU/usuario.php');
     }
   } else {
