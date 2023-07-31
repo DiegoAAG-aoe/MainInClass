@@ -10,9 +10,9 @@
                 while ($curso = mysqli_fetch_array(
                         $all_categories,MYSQLI_ASSOC)):;
             ?>
-                <option value="<?php echo $curso["Cur_Secc"];
+                <option value="<?php echo $curso["Cur_Tipo"];
                 ?>">
-                    <?php echo $curso["Cur_Secc"];
+                    <?php echo $curso["Cur_Tipo"];
                     ?>
                 </option>
             <?php

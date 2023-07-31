@@ -17,7 +17,7 @@ mysqli_query($conexion,"delete from curso where Cur_Asignatura='$sid1' AND Cur_T
 
 
 //Luego de realizada la accion anterios a esta, se re dirige a la pagina indicada en el "href".
-echo "<script>window.location.href='ver_cur_asig.php?id=$sid1 ';</script>";
+echo "<script>window.location.href='ver_cur.php?id=$sid1 ';</script>";
 
 
 ?>

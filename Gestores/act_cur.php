@@ -7,7 +7,7 @@ include('../conexion.php');
 $id1 = $_REQUEST['id1'];
 $id2 = $_REQUEST['id2'];
 $id3 = $_REQUEST['id3'];
-$Cur_Tipo = $_POST['curso']; 
+
 
 
 
@@ -20,18 +20,19 @@ $seccion = $res['Cur_Secc'];
 $tipo = $res['Cur_Tipo'];
 
 
+
 if (isset($submit)) {
 
-    $query1 = "update asistencia set Asi_Secc = '$Cur_Secc', Asi_Tipo = '$Cur_Tipo' where Asi_Asignatura='$id' AND Asi_Tipo='$tipo' AND Asi_Secc='$seccion'";
-    $query2 = "update estasist set Est_Secc = '$Cur_Secc', Est_Tipo = '$Cur_Tipo' where Est_Asistencia='$id' AND Est_Tipo='$tipo' AND Est_Secc='$seccion'";
-    $query3 = "update inscrito set Ins_Secc = '$Cur_Secc', Ins_Tipo = '$Cur_Tipo' where Ins_Asignatura='$id' AND Ins_Tipo='$tipo' AND Ins_Secc='$seccion'";
-    $query4 = "update horario set Hor_Secc = '$Cur_Secc', Hor_Tipo = '$Cur_Tipo' where Hor_Asignatura='$id' AND Hor_Tipo='$tipo' AND Hor_Secc='$seccion'";      
-    $query  = "update curso set Cur_Secc = '$Cur_Secc', Cur_Tipo = '$Cur_Tipo' where Cur_Asignatura='$id' AND Cur_Tipo='$tipo' AND Cur_Secc='$seccion'";
-    
-    mysqli_query($conexion,$query1);
-    mysqli_query($conexion,$query2);
-    mysqli_query($conexion,$query3);
-    mysqli_query($conexion,$query4);
+    $query1 = "update asistencia set Asi_Secc = '$Cur_Secc', Asi_Tipo = '$cur' where Asi_Asignatura='$id' AND Asi_Tipo='$tipo' AND Asi_Secc='$seccion'";
+    $query2 = "update estasist set Est_Secc = '$Cur_Secc', Est_Tipo = '$cur' where Est_Asistencia='$id' AND Est_Tipo='$tipo' AND Est_Secc='$seccion'";
+    $query3 = "update inscrito set Ins_Secc = '$Cur_Secc', Ins_Tipo = '$cur' where Ins_Asignatura='$id' AND Ins_Tipo='$tipo' AND Ins_Secc='$seccion'";
+    $query4 = "update horario set Hor_Secc = '$Cur_Secc', Hor_Tipo = '$cur' where Hor_Asignatura='$id' AND Hor_Tipo='$tipo' AND Hor_Secc='$seccion'";
+    $query = "update curso set Cur_Secc = '$Cur_Secc', Cur_Tipo = '$cur' where Cur_Asignatura='$id' AND Cur_Tipo='$tipo' AND Cur_Secc='$seccion'";
+
+    mysqli_query($conexion, $query1);
+    mysqli_query($conexion, $query2);
+    mysqli_query($conexion, $query3);
+    mysqli_query($conexion, $query4);
     mysqli_query($con, $query);
 
     $msg = '<div class="alert alert-success alert-dismissible">
@@ -60,13 +61,19 @@ if (isset($submit)) {
                     </div>
 
                     <div class="body">
-                        <form method="post" enctype="multipart/form-data">
+                        <form method="POST" enctype="multipart/form-data">
                             <div class="row clearfix">
 
                                 <div class="col-lg-8 col-md-2 col-sm-3 col-xs-6">
                                     <div class="form-group form-float">
                                         <div>
-                                            <?php include("opcion_tipo_curso.php") ?>
+                                                <select name="cur" id="opciones">
+                                                    <!-- option tag starts -->
+                                                    <option value="T">T</option>
+                                                    <option value="E">E</option>
+                                                    <option value="L">L</option>
+                                                </select>
+                                          
                                         </div>
                                         <div class="form-line">
                                             <input required type="text" name="Cur_Secc" value="<?php echo $seccion; ?>"
