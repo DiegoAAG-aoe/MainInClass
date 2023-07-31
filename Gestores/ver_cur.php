@@ -58,19 +58,19 @@ include('../include/sidebar.php');
                                 include ('../include/config.php');
                                 $query = mysqli_query($con, "select * from curso");
                                 while ($res = mysqli_fetch_array($query)) {
-                                    $id = $res['Cur_Asignatura'];
-                                    $tip = $res['Cur_Tipo'];
-                                    $secc = $res['Cur_Secc'];
+                                    $id1 = $res['Cur_Asignatura'];
+                                    $id2 = $res['Cur_Tipo'];
+                                    $id3 = $res['Cur_Secc'];
                                     $per = $res['Cur_Periodo'];
                                 ?>
                                 <tr>
-                                    <td><?php echo $id; ?></td>
-                                    <td><?php echo $tip; ?></td>
-                                    <td><?php echo $secc; ?></td>
+                                    <td><?php echo $id1; ?></td>
+                                    <td><?php echo $id2; ?></td>
+                                    <td><?php echo $id3; ?></td>
                                     <td><?php echo $per; ?></td>
                                     <td>
-                                        <a class='btn btn-info' href="act_cur.php?id=<?php echo $id; ?>&tip=<?php echo $tip; ?>&secc=<?php echo $secc; ?>')">editar<span class="glyphicon glyphicon-pencil"></span></a>
-                                        <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>', '<?php echo $tip; ?>', '<?php echo $secc; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
+                                        <a class='btn btn-info' href="act_cur.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class='btn btn-danger' onclick="delet('<?php echo $id1; ?>', '<?php echo $id2; ?>', '<?php echo $id3; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
 
                                         <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                     </td>

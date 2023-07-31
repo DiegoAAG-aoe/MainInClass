@@ -8,6 +8,7 @@ $id1=$_REQUEST['id1'];
 
 if (isset($submit)) {
     $periodo = $_POST['periodo'];
+    $Cur_Tipo = $_POST['curso']; 
     $query = "insert into curso(Cur_Tipo, Cur_Secc, Cur_Periodo, Cur_porcentaje, Cur_Asignatura) values('$Cur_Tipo', '$Cur_Secc', '$periodo',0, '$id1')";
     $r = mysqli_query($con, $query);
 
@@ -60,13 +61,12 @@ if (isset($submit)) {
                                             <label class="form-label">Seccion</label>
                                         </div>
 
-                                        <div class="form-line">
-                                            <input required type="text" name="Cur_Tipo" class="form-control">
-                                            <label class="form-label">Tipo</label>
+                                        <div>
+                                            <?php include("opcion_periodo.php") ?>
                                         </div>
 
                                         <div>
-                                            <?php include("opcion_periodo.php") ?>
+                                            <?php include("opcion_tipo.php") ?>
                                         </div>
 
 

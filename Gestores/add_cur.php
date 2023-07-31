@@ -9,6 +9,7 @@ include ('../conexion.php');
 if (isset($submit)) {
     $periodo = $_POST['periodo'];
     $asignatura = $_POST['asignatura']; 
+    $Cur_Tipo = $_POST['curso']; 
     $query = "insert into curso(Cur_Tipo, Cur_Secc, Cur_Periodo, Cur_porcentaje, Cur_Asignatura) values('$Cur_Tipo', '$Cur_Secc', '$periodo',0, '$asignatura')";
     $r = mysqli_query($con, $query);
 
@@ -61,17 +62,16 @@ if (isset($submit)) {
                                             <label class="form-label">Seccion</label>
                                         </div>
 
-                                        <div class="form-line">
-                                            <input required type="text" name="Cur_Tipo" class="form-control">
-                                            <label class="form-label">Tipo</label>
-                                        </div>
-
                                         <div>
                                             <?php include("opcion_periodo.php") ?>
                                         </div>
 
                                         <div>
                                             <?php include("opcion_asignatura.php") ?>
+                                        </div>
+
+                                        <div>
+                                            <?php include("opcion_tipo.php") ?>
                                         </div>
 
                                         <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12" style="text-align: center" ;>
