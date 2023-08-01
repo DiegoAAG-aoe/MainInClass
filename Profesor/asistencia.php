@@ -28,33 +28,50 @@ $id4 = $_REQUEST['id4'];
                                 <tr>
                                     <th>Rut</th>
                                     <th>Nombre</th>
+                                    <th>Marcar Asistencia</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php
-                                include('../include/config.php');
-                                $query = mysqli_query($con, "select Ins_Rut from inscrito where Ins_Asignatura='$id1' AND Ins_Tipo='$id2' AND Ins_Secc='$id3' AND Ins_Periodo='$id4'");
-                                while ($res = mysqli_fetch_array($query)) {
-                                    $ide = $res['Ins_Rut'];
-                                    $que = mysqli_query($con, "select * from estudiante where Es_Rut='$ide'");
-                                    $resu = mysqli_fetch_array($que);
-                                    $id = $resu['Es_Rut'];
-                                    $nom = $resu['Es_Nombre'];
-                                    ?>
-                                    <tr>
-                                        <td>
-                                            <?php echo $id; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $nom; ?>
-                                        </td>
-                                        <td>
-                                        <label><input type="checkbox" id="cbox1" value="first_checkbox" /></label>
-                                           
-                                            <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
-                                        </td>
-                                    </tr>
-                                <?php } ?>
+                                <form action="estasist.php" method="POST">
+                                    <?php
+                                    session_start();
+                                    include('../include/config.php');
+                                    $query = mysqli_query($con, "select * from inscrito where Ins_Asignatura='$id1' AND Ins_Tipo='$id2' AND Ins_Secc='$id3' AND Ins_Periodo='$id4'");
+                                    while ($res = mysqli_fetch_array($query)) {
+                                        $ide = $res['Ins_Rut'];
+                                        $_SESSION['asiggg'] = $res['Ins_Asignatura'];
+                                        $_SESSION['tipooo'] = $res['Ins_Tipo'];
+                                        $_SESSION['secccc'] = $res['Ins_Secc'];
+                                        $_SESSION['periodooo'] = $res['Ins_Periodo'];
+
+
+                                        
+                                        $que = mysqli_query($con, "select * from estudiante where Es_Rut='$ide'");
+                                        $resu = mysqli_fetch_array($que);
+                                        $id = $resu['Es_Rut'];
+                                        $nom = $resu['Es_Nombre'];
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $id; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $nom; ?>
+                                            </td>
+                                            <td>
+                                                <?php
+                                                echo '<label>';
+                                                    echo '<input type="checkbox"
+                                                        name="attendance[' . $id . ']">';
+                                                    
+                                                    echo '</label><br>';
+                                                ?>
+                                                <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                    <input type="submit" value="Save Attendance">
+                                </form>
                             </tbody>
                         </table>
                     </div>
