@@ -133,7 +133,7 @@ if ($tipo == 1) {
 <a href="../PU/usuario.php">Inicio</a>
   <a href="#">Horario Docente</a>
   <a href="#">Cursos</a>
-  <a href="../excelsubida/excel.php">Subir Archivos</a>
+  <a href="../excelsubida/index.php">Subir Archivos</a>
   <a href="#">Profesores</a>
   <a href="../Gestores/ver_estu.php">Gestion Estudiante</a>
   <a href="../include/logout.php">Cerrar Sesión</a>

@@ -9,17 +9,6 @@ $email=$_REQUEST['id1'];
 $subject=$_REQUEST['id2'];
 $message=$_REQUEST['id3'];
 
-var_dump($email); // Check the value of $email
-var_dump($subject);
-var_dump($message);
-echo "//";
-echo $email;
-echo "//";
-echo $subject;
-echo "//";
-echo $message;
-echo "//";
-
 
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
