@@ -24,7 +24,7 @@
 			foreach($rows as $row) :
 			?>
 			<tr>
-				<td> <?php echo $row["Jef_Rut"]; ?> ?> </td>
+				<td> <?php echo $row["Jef_Rut"];  ?> </td>
 				<td> <?php echo $row["Jef_Nombre"]; ?> </td>
 				<td> <?php echo $row["Jef_Correo"]; ?> </td>
 				<td> <?php echo $row["Jef_contrasena"]; ?> </td>
