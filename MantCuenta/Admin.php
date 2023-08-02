@@ -28,8 +28,8 @@ include('../include/sidebar.php');
         <div >
             <div>
                 <div>
-                    <a class="btn btn-info" href="add_estu.php">Anadir Administrador</a>
-                    <h2 style="text-align: center;">Gestion Administrador</h2>
+                    <a class="btn btn-info" href="add_adm.php">Anadir Administrador</a>
+                    <h2 style="text-align: center;">Gestion Administrador Sistema</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
@@ -38,6 +38,7 @@ include('../include/sidebar.php');
                                 <tr>
                                     <th>Rut</th>
                                     <th>Nombre</th>
+
                                 </tr>
                             </thead>
                             <tbody>
@@ -47,13 +48,15 @@ include('../include/sidebar.php');
                                 while ($res = mysqli_fetch_array($query)) {
                                     $id = $res['Adm_Rut'];
                                     $nom = $res['Adm_Nombre'];
+                                    $correo = $res ['Adm_Correo'];
+                                    $pass = $res ['Adm_Contrasena'];
                                 ?>
                                 <tr>
                                     <td><?php echo $id; ?></td>
                                     <td><?php echo $nom; ?></td>
                                     <td>
-                                        <a class='btn btn-info' href="?id=<?php echo $id; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
-                                        <a class='btn btn-danger' onclick="delet(<?php echo $id; ?>);">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
+                                        <a class='btn btn-info' href="?id=<?php echo $id; ?>, ?nom=<?php echo $nom; ?>, ?correo=<?php echo $correo; ?>, ?contrasena=<?php echo $pass; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
+                                        <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>','<?php echo $nom; ?>','<?php echo $correo; ?>','<?php echo $pass; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
                                         <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                     </td>
                                 </tr>

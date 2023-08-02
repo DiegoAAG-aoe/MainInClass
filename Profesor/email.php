@@ -2,10 +2,29 @@
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
+
+
+
+$email=$_REQUEST['id1'];
+$subject=$_REQUEST['id2'];
+$message=$_REQUEST['id3'];
+
+var_dump($email); // Check the value of $email
+var_dump($subject);
+var_dump($message);
+echo "//";
+echo $email;
+echo "//";
+echo $subject;
+echo "//";
+echo $message;
+echo "//";
+
+
 require 'phpmailer/src/Exception.php';
 require 'phpmailer/src/PHPMailer.php';
 require 'phpmailer/src/SMTP.php';
-if (isset($_POST["send"])) {
+if (empty($_POST["send"])) {
     $mail = new PHPMailer(true);
     $mail->isSMTP();
     $mail->Host = 'smtp.gmail.com';
@@ -15,17 +34,17 @@ if (isset($_POST["send"])) {
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->setFrom('inclassusach@gmail.com'); // Your gmail
-    $mail->addAddress($_POST["email"]);
+    $mail->addAddress($_REQUEST['id1']);
     $mail->isHTML(true);
-    $mail->Subject = $_POST["subject"];
-    $mail->Body = $_POST["message"];
+    $mail->Subject = $subject;
+    $mail->Body = $message;
     $mail->send();
     echo
         "
 <script>
-alert('Sent Successfully');
-document.location.href = 'index.php';
+document.location.href = 'ver_cur_asistencia.php';
 </script>
 ";
 }
+
 ?>

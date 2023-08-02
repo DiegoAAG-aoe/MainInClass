@@ -12,19 +12,14 @@ $id4 = $_REQUEST['id4'];
 
 
 
-$query = mysqli_query($con, "select * from curso where Cur_Asignatura='$id1' AND Cur_Tipo='$id2' AND Cur_Secc='$id3'");
-$res = mysqli_fetch_array($query);
-
-
-$id = $res['Cur_Asignatura'];
-$seccion = $res['Cur_Secc'];
-$tipo = $res['Cur_Tipo'];
-
+$query = mysqli_query($con, "select * from curso where Cur_Asignatura='$id1' AND Cur_Tipo='$id2' AND Cur_Secc='$id3' AND Cur_Periodo='$id4'");
+$res = mysqli_fetch_array($query); 
+$porcentaje = $res['Cur_Porcentaje'];
 
 
 if (isset($submit)) {
 
-    $query  = "update curso set Cur_Secc = '$Cur_Secc', Cur_Tipo = '$cur' where Cur_Asignatura='$id' AND Cur_Tipo='$tipo' AND Cur_Secc='$seccion AND Cur_Porcentaje='$id4'";
+    $query  = "update curso set Cur_Porcentaje = '$Cur_Porcentaje' where Cur_Asignatura='$id1' AND Cur_Tipo='$id2' AND Cur_Secc='$id3' AND Cur_Periodo='$id4'";
 
  
     mysqli_query($con, $query);
@@ -60,22 +55,11 @@ if (isset($submit)) {
 
                                 <div class="col-lg-8 col-md-2 col-sm-3 col-xs-6">
                                     <div class="form-group form-float">
-                                        <div>
-                                                <select name="cur" id="opciones">
-                                                    <!-- option tag starts -->
-                                                    <option value="T">T</option>
-                                                    <option value="E">E</option>
-                                                    <option value="L">L</option>
-                                                </select>
-                                          
-                                        </div>
                                         <div class="form-line">
-                                            <input required type="text" name="Cur_Porcentaje" value="<?php echo $seccion; ?>"
+                                            <input required type="text" name="Cur_Porcentaje" value="<?php echo $porcentaje; ?>"
                                                 class="form-control">
                                             <label class="form-label">Porcentaje de curso</label>
                                         </div>
-
-
                                         <div class="col-lg-12 col-md-6 col-sm-6 col-xs-12" style="text-align: center" ;>
 
 

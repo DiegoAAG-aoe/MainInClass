@@ -1,4 +1,5 @@
 <?php
+date_default_timezone_set('America/Santiago');
 include('../include/header.php');
 include('../include/sidebar.php');
 extract($_REQUEST);
@@ -9,9 +10,8 @@ $id2 = $_REQUEST['id2'];
 $id3 = $_REQUEST['id3'];
 $id4 = $_REQUEST['id4'];
 $_SESSION['ide5'] = $date = date('d/m/Y');
-echo $date;
 ?>
-
+<h2 style="text-align: center;margin-bottom:2.5rem">Fecha actual:<?php echo $date; ?></h2>
 
 <section class="content">
     <div class="row clearfix">
@@ -33,7 +33,7 @@ echo $date;
                             </thead>
                             <tbody>
                                 <form action="estasist.php" method="POST">
-                                    
+
                                     <?php
                                     include('../include/config.php');
                                     $query = mysqli_query($con, "select * from inscrito where Ins_Asignatura='$id1' AND Ins_Tipo='$id2' AND Ins_Secc='$id3' AND Ins_Periodo='$id4'");
@@ -58,11 +58,11 @@ echo $date;
                                             <td>
                                                 <?php
                                                 echo '<label>';
-                                                echo '<input type="checkbox"
-                                                        name="attendance[' . $id . ']">';
-
+                                                echo '<input type="hidden" name="attendance[' . $id . ']" value="0">'; // hidden input with value 0
+                                                echo '<input type="checkbox" name="attendance[' . $id . ']" value="1">'; // checkbox with value 1
                                                 echo '</label><br>';
                                                 ?>
+
                                                 <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                             </td>
                                         </tr>
