@@ -12,11 +12,11 @@ $res=mysqli_fetch_array($query);
 
 $nombre = $res['Adm_Nombre'];
 $correo = $res['Adm_Correo'];
-$pass = $res['Adm_Contrasena'];
+$pass = $res['Adm_contrasena'];
 
 if (isset($submit)) {
 
-    $query = "update adminsis set Adm_Nombre = '$adm_nombre', Adm_Correo = '$adm_correo', Adm_Contrasena = '$adm_pass' where Adm_Rut = '$id'";
+    $query = "update adminsis set Adm_Nombre = '$adm_nombre', Adm_Correo = '$adm_correo', Adm_Contrasena = '$adm_contrasena' where Adm_Rut = '$id'";
     mysqli_query($con, $query);
 
     $msg = '<div class="alert alert-success alert-dismissible">

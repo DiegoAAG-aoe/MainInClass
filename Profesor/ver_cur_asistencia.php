@@ -14,19 +14,33 @@
 </head>
 
 <?php
-
+date_default_timezone_set('America/Santiago');
 include('../include/header.php');
 extract($_REQUEST);
 include('../conexion.php');
+include('../include/sidebar.php');
+
+$date = date('m/d/Y');
+
+$day = date('l', strtotime($date));
 
 
-
-
+if ($day == 'Monday') {
+    $day = 'Lun';
+} elseif ($day == 'Tuesday') {
+    $day = 'Ma';
+} elseif ($day == 'Wednesday') {
+    $day = 'Mi';
+} elseif ($day == 'Thursday') {
+    $day = 'Ju';
+} elseif ($day == 'Friday') {
+    $day = 'Vi';
+}
 ?>
 
-<?php
-include('../include/sidebar.php');
-$rut=$_SESSION['rut'];
+<?php 
+
+$rut = $_SESSION['rut'];
 
 // if (isset($_POST['rut'])) 
 // { $rut = $_POST['rut']; }
@@ -55,45 +69,46 @@ $rut=$_SESSION['rut'];
                             <tbody>
                                 <?php
                                 include('../include/config.php');
-
-                                $query = mysqli_query($con, "select Hor_Asignatura, Hor_Tipo, Hor_Secc, Hor_Periodo from horario where Hor_profesor='$rut'");
+                                $query = mysqli_query($con, "select Hor_Asignatura, Hor_Tipo, Hor_Secc, Hor_Periodo, Hor_Dia from horario where Hor_profesor='$rut'And Hor_Dia='$day'" );
                                 while ($res = mysqli_fetch_array($query)) {
                                     $ide1 = $res['Hor_Asignatura'];
                                     $ide2 = $res['Hor_Tipo'];
                                     $ide3 = $res['Hor_Secc'];
                                     $ide4 = $res['Hor_Periodo'];
+                                    $ide5 = $res['Hor_Dia'];
+                                        $que = mysqli_query($con, "select * from curso where Cur_Asignatura='$ide1' AND Cur_Tipo='$ide2' AND Cur_Secc='$ide3' AND Cur_Periodo='$ide4'");
+                                        $resu = mysqli_fetch_array($que);
+                                        $id1 = $resu['Cur_Asignatura'];
+                                        $id2 = $resu['Cur_Tipo'];
+                                        $id3 = $resu['Cur_Secc'];
+                                        $id4 = $resu['Cur_Periodo'];
+                                        ?>
+                                        <tr>
+                                            <td>
+                                                <?php echo $id1; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $id2; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $id3; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $id4; ?>
+                                            </td>
+                                            <td>
+                                                <?php echo $ide5; ?>
+                                            </td>
+                                            <td>
+                                                <a class='btn btn-info'
+                                                    href="asistencia.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">asistencia<span
+                                                        class="glyphicon glyphicon-pencil"></span></a>
 
-                                 
-                                    $que = mysqli_query($con, "select * from curso where Cur_Asignatura='$ide1' AND Cur_Tipo='$ide2' AND Cur_Secc='$ide3' AND Cur_Periodo='$ide4'");
-                                    $resu = mysqli_fetch_array($que);
-                                    $id1 = $resu['Cur_Asignatura'];
-                                    $id2 = $resu['Cur_Tipo'];
-                                    $id3 = $resu['Cur_Secc'];
-                                    $id4 = $resu['Cur_Periodo'];
-                                    ?>
-                                    <tr>
-                                        <td>
-                                            <?php echo $id1; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $id2; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $id3; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $id4; ?>
-                                        </td>
-                                        <td>
-                                            <a class='btn btn-info'
-                                                href="asistencia.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">asistencia<span
-                                                    class="glyphicon glyphicon-pencil"></span></a>
-                                            
-                                                    <a class='btn btn-info'
-                                                href="porcentaje.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">porcentaje<span
-                                                    class="glyphicon glyphicon-pencil"></span></a>
-                                        </td>
-                                    </tr>
+                                                <a class='btn btn-info'
+                                                    href="porcentaje.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">porcentaje<span
+                                                        class="glyphicon glyphicon-pencil"></span></a>
+                                            </td>
+                                        </tr>
                                 <?php } ?>
                             </tbody>
                         </table>

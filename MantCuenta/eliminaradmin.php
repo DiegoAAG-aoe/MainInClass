@@ -11,7 +11,7 @@ mysqli_query($conexion,"delete from admcarrera where ADC_Admin='$sid'");
 mysqli_query($conexion,"delete from adminsis where Adm_Rut='$sid'");
 
 //Luego de realizada la accion anterios a esta, se re dirige a la pagina indicada en el "href".
-echo"<script>window.location.href='ver_estu.php';</script>";
+echo"<script>window.location.href='Admin.php';</script>";
 
 
 ?>

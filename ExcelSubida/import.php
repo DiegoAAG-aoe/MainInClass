@@ -1,10 +1,13 @@
 <?php
+use PhpOffice\PhpSpreadsheet\IOFactory;
 require 'vendor/autoload.php';
 include "class.upload.php";
 include('../include/header.php');
 include('../include/sidebar.php');
 extract($_REQUEST);
 include('../conexion.php');
+
+
 
 include('../include/config.php');
 if(isset($_FILES["name"])){
