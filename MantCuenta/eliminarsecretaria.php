@@ -11,7 +11,7 @@ mysqli_query($conexion,"delete from secretariacarrera where SEC_SC='$sid'");
 mysqli_query($conexion,"delete from secretariac where Sc_Rut='$sid'");
 
 //Luego de realizada la accion anterios a esta, se re dirige a la pagina indicada en el "href".
-echo"<script>window.location.href='ver_estu.php';</script>";
+echo"<script>window.location.href='secretaria.php';</script>";
 
 
 ?>

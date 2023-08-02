@@ -21,7 +21,6 @@ include ('../include/sidebar.php');
   <a href="Admin.php"><button class="button button3">Administrador</button></a>
   <a href="Secretaria.php"><button class="button button3">Secretaria</button></a>
   <a href="Profesor.php"><button class="button button3">Profesor</button></a>
-  <a href="Jefe.php"><button class="button button3">Jefe</button></a>
 </div>
 <footer class="pie-pagina">
 <img src="../Logos/CNA7.png" alt="7anos" class="logodeabajo" ></img>

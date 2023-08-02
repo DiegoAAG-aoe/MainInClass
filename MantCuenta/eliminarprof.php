@@ -11,7 +11,7 @@ mysqli_query($conexion,"delete from profesorcarrera where Pca_Rut='$sid'");
 mysqli_query($conexion,"delete from profesor where Prof_Rut='$sid'");
 
 //Luego de realizada la accion anterios a esta, se re dirige a la pagina indicada en el "href".
-echo"<script>window.location.href='ver_estu.php';</script>";
+echo"<script>window.location.href='Profesor.php';</script>";
 
 
 ?>

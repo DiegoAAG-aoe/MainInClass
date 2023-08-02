@@ -40,7 +40,6 @@ if ($day == 'Monday') {
 
 <?php 
 
-$rut = $_SESSION['rut'];
 
 // if (isset($_POST['rut'])) 
 // { $rut = $_POST['rut']; }
@@ -53,7 +52,7 @@ $rut = $_SESSION['rut'];
             <div>
 
                 <div>
-                    <h2 style="text-align: center;margin-bottom:2.5rem">Cursos del Profesor por dia de clase</h2>
+                    <h2 style="text-align: center;margin-bottom:2.5rem">Cursos de los Profesores</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
@@ -64,12 +63,13 @@ $rut = $_SESSION['rut'];
                                     <th>Tipo</th>
                                     <th>Seccion</th>
                                     <th>Periodo</th>
+                                    <th>Porcentaje</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include('../include/config.php');
-                                $query = mysqli_query($con, "select Hor_Asignatura, Hor_Tipo, Hor_Secc, Hor_Periodo, Hor_Dia from horario where Hor_profesor='$rut'And Hor_Dia='$day'" );
+                                $query = mysqli_query($con, "select * from horario" );
                                 while ($res = mysqli_fetch_array($query)) {
                                     $ide1 = $res['Hor_Asignatura'];
                                     $ide2 = $res['Hor_Tipo'];
@@ -82,6 +82,7 @@ $rut = $_SESSION['rut'];
                                         $id2 = $resu['Cur_Tipo'];
                                         $id3 = $resu['Cur_Secc'];
                                         $id4 = $resu['Cur_Periodo'];
+                                        $id5 = $resu['Cur_Porcentaje'];
                                         ?>
                                         <tr>
                                             <td>
@@ -97,17 +98,9 @@ $rut = $_SESSION['rut'];
                                                 <?php echo $id4; ?>
                                             </td>
                                             <td>
-                                                <?php echo $ide5; ?>
+                                                <?php echo $id5; ?>
                                             </td>
                                             <td>
-                                                <a class='btn btn-info'
-                                                    href="asistencia.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">asistencia<span
-                                                        class="glyphicon glyphicon-pencil"></span></a>
-
-                                                <a class='btn btn-info'
-                                                    href="porcentaje.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">porcentaje<span
-                                                        class="glyphicon glyphicon-pencil"></span></a>
-                                            </td>
                                         </tr>
                                 <?php } ?>
                             </tbody>

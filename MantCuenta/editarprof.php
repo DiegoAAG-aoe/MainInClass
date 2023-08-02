@@ -10,13 +10,14 @@ $query=mysqli_query($con,"select * from profesor where Prof_Rut ='$id'");
 $res=mysqli_fetch_array($query);
 
 
-$nombre = $res['Prof_Nombre'];
+$id = $res['Prof_Rut'];
+$nom = $res['Prof_Nom'];
 $correo = $res['Prof_Correo'];
-$pass = $res['Prof_Contrasena'];
+$contrasena = $res['Prof_contrasena'];
 
 if (isset($submit)) {
 
-    $query = "update adminsis set Prof_Nombre = '$prof_nombre', Prof_Correo = '$prof_correo', Prof_Contrasena = '$prof_pass' where Prof_Rut = '$id'";
+    $query = "update profesor set Prof_Nom = '$prof_nom', Prof_Correo = '$prof_correo', Prof_contrasena = '$prof_contrasena' where Prof_Rut = '$id'";
     mysqli_query($con, $query);
 
     $msg = '<div class="alert alert-success alert-dismissible">
@@ -53,16 +54,16 @@ if (isset($submit)) {
                                 <div class="col-lg-8 col-md-2 col-sm-3 col-xs-6">
                                         <div class="form-group form-float">
                                             <div class="form-line">
-                                                <input required type="text" name="prof_nombre" value="<?php echo $nombre;?>" class="form-control">
-                                                <label class="form-label">Nombre Profesor</label>
+                                                <input required type="text" name="prof_nom" value="<?php echo $nom;?>" class="form-control">
+                                                <label class="form-label">Nombre Administrador</label>
                                             </div>
                                             <div class="form-line">
                                                 <input required type="text" name="prof_correo" value="<?php echo $correo;?>" class="form-control">
-                                                <label class="form-label">Correo de Profesor</label>
+                                                <label class="form-label">Correo del Administrador</label>
                                             </div>
                                             <div class="form-line">
-                                                <input required type="text" name="prof_contrasena" value="<?php echo $pass;?>" class="form-control">
-                                                <label class="form-label">Contraseña de Profesor</label>
+                                                <input required type="text" name="prof_contrasena" value="<?php echo $contrasena;?>" class="form-control">
+                                                <label class="form-label">Contraseña del Administrador</label>
                                             </div>
 
 

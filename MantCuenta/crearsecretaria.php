@@ -8,7 +8,7 @@ include ('../conexion.php');
 
 
 if (isset($submit)) {
-    $query = "insert into adminsis(Sc_Rut, Sc_Nombre, Sc_Correo, Sc_Contrasena) values('$Sc_Rut', '$Sc_Nombre','$Sc_Correo', '$Sc_Contrasena')";
+    $query = "insert into secretariac(Sc_Rut, Sc_Nombre, Sc_Correo, Sc_contrasena) values('$Sc_Rut', '$Sc_Nombre','$Sc_Correo', '$Sc_contrasena')";
     $r = mysqli_query($conexion, $query);
 
     //En caso de ingresarse de manera correcta se guardara dentro de msg un mensaje de confirmacion de ingreso.
@@ -72,7 +72,7 @@ if (isset($submit)) {
                                         </div>
 
                                         <div class="form-line">
-                                            <input required type="text" name="Sc_Contrasena" class="form-control">
+                                            <input required type="text" name="Sc_contrasena" class="form-control">
                                             <label class="form-label">Contrasena Secretaria</label>
                                         </div>
 

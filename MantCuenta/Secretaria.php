@@ -23,12 +23,20 @@
 include ('../include/header.php');
 include('../include/sidebar.php');
 ?>
+<script type="text/javascript">
+    //Funcion en especifica para poder hacer uso del 'delete' para poder borrar valores como tal con su respectivo llamado hacia el archivo como tal
+    function delet(id) {
+        if (confirm("you want to delete ?")) {
+            window.location.href ="eliminarsecretaria.php?xxx="+id;
+        }
+    }
+</script>
 <section class="content">
     <div class="row clearfix">
         <div >
             <div>
                 <div>
-                    <a class="btn btn-info" href="add_secretaria.php">Anadir Secretaria Carrera</a>
+                    <a class="btn btn-info" href="crearsecretaria.php">Anadir Secretaria Carrera</a>
                     <h2 style="text-align: center;">Gestion Secretaria Carrera</h2>
                 </div>
                 <div class="body">
@@ -49,14 +57,14 @@ include('../include/sidebar.php');
                                     $id = $res['Sc_Rut'];
                                     $nom = $res['Sc_Nombre'];
                                     $correo = $res ['Sc_Correo'];
-                                    $pass = $res ['Sc_Contrasena'];
+                                    $pass = $res ['Sc_contrasena'];
                                 ?>
                                 <tr>
                                     <td><?php echo $id; ?></td>
                                     <td><?php echo $nom; ?></td>
                                     <td>
                                         <a class='btn btn-info' href="?id=<?php echo $id; ?>, ?nom=<?php echo $nom; ?>, ?correo=<?php echo $correo; ?>, ?contrasena=<?php echo $pass; ?>">editar<span class="glyphicon glyphicon-pencil"></span></a>
-                                        <a class='btn btn-danger' onclick="delet('<?php echo $id; ?>','<?php echo $nom; ?>','<?php echo $correo; ?>','<?php echo $pass; ?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
+                                        <a class='btn btn-danger' onclick="delet('<?php echo $id;?>');">eliminar<span class="glyphicon glyphicon-remove" style="color:white;"></span></a>
                                         <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                     </td>
                                 </tr>
@@ -70,14 +78,6 @@ include('../include/sidebar.php');
     </div>
 </section>
 
-<script type="text/javascript">
-    //Funcion en especifica para poder hacer uso del 'delete' para poder borrar valores como tal con su respectivo llamado hacia el archivo como tal
-    function delet(id) {
-        if (confirm("you want to delete ?")) {
-            window.location.href = '' + id;
-        }
-    }
-</script>
 
 
 

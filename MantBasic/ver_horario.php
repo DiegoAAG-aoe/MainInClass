@@ -26,11 +26,9 @@ include('../conexion.php');
 
 <?php
 include('../include/sidebar.php');
-$rut=$_SESSION['rut'];
 
-// if (isset($_POST['rut'])) 
-// { $rut = $_POST['rut']; }
-// else {echo "chaaaaaaa";}
+
+
 ?>
 
 <section class="content">
@@ -39,37 +37,35 @@ $rut=$_SESSION['rut'];
             <div>
 
                 <div>
-                    <h2 style="text-align: center;margin-bottom:2.5rem">Asistencias guardadas por el Profesor</h2>
+                    <h2 style="text-align: center;margin-bottom:2.5rem">Horarios de los Profesores</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
                         <table class="table table-bordered table-striped table-hover">
                             <thead>
                                 <tr>
-                                <th>RUT</th>
-                                <th>Asistencia</th>
-                                <th>Asignatura</th>
-                                <th>Tipo</th>
-                                <th>Seccion</th>
-                                <th>Periodo</th>
-                                <th>EstadoEstu</th>
-                                <th>Asiste</th>
+                                    <th>Asignatura</th>
+                                    <th>Tipo</th>
+                                    <th>Seccion</th>
+                                    <th>Periodo</th>
+                                    <th>Dia</th>
+                                    <th>Num Bloque</th>
+                                    <th>Hora</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include('../include/config.php');
 
-                                $query = mysqli_query($con, "select * FROM estasist");
+                                $query = mysqli_query($con, "select * from horario");
                                 while ($res = mysqli_fetch_array($query)) {
-                                    $ide1 = $res['Est_Rut'];
-                                    $ide2 = $res['Est_Asistencia'];
-                                    $ide3 = $res['Est_Asignatura'];
-                                    $ide4 = $res['Est_Tipo'];
-                                    $ide5 = $res['Est_Secc'];
-                                    $ide6 = $res['Est_Periodo'];
-                                    $ide7 = $res['Est_EstadoEstu'];
-                                    $ide8 = $res['Est_Asiste'];
+                                    $ide1 = $res['Hor_Asignatura'];
+                                    $ide2 = $res['Hor_Tipo'];
+                                    $ide3 = $res['Hor_Secc'];
+                                    $ide4 = $res['Hor_Periodo'];
+                                    $ide5 = $res['Hor_Dia'];
+                                    $ide6 = $res['Hor_Num'];
+                                    $ide7 = $res['Hor_Hora'];
 
                                     ?>
                                     <tr>
@@ -93,9 +89,6 @@ $rut=$_SESSION['rut'];
                                         </td>
                                         <td>
                                             <?php echo $ide7; ?>
-                                        </td>
-                                        <td>
-                                            <?php echo $ide8; ?>
                                         </td>
                                         <td>
                                             

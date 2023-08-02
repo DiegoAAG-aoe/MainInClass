@@ -85,12 +85,12 @@ if ($tipo == 1) {
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
   <b style="color:black"><?php echo $name; ?></b>
   <a href="../PU/usuario.php">Inicio</a>
-  <a href="../Mantenedores/MantenedorPeriodo.php">Mantención Periodos</a>
-  <a href="../Mantenedores/MantenedorEstadoEstu.php">Mantención Estado Estudiantes</a>
-  <a href="../Mantenedores/MantenedorBH.php">Mantención BloqueHorario</a>
   <a href="../MantCuenta/MantencionUs.php">Mantención Usuarios</a>
   <a href="../MantBasic/ver_asig.php">Mantención Asignaturas</a>
   <a href="../Gestores/ver_cur.php">Cursos</a>
+  <a href="../descargalistados/descargaSecretaria.php">Descargar Listado Secretaria</a>
+  <a href="../descargalistados/descargaJefes.php">Descargar Listado Jefes</a>
+  <a href="../descargalistados/descargaAdminSis.php">Descargar Listado Admins</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
 
@@ -109,7 +109,8 @@ if ($tipo == 1) {
   <b style="color:black"><?php echo $name; ?></b>
   <a href="../PU/usuario.php">Inicio</a>
   <a href="../descargalistados/descargaEstuCur.php">Descargar Listado Estudiantes por Curso</a>
-  <a href="#">Descargar Listado Cursos</a>
+  <a href="../descargalistados/descargaProfesor.php">Descargar Listado Profesor</a>
+  <a href="../descargalistados/descargaEstuCarr.php">Descargar Listado Estudiante por Carrera</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
 
@@ -127,13 +128,13 @@ if ($tipo == 1) {
 <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
 <b style="color:black"><?php echo $name; ?></b>
 <a href="../PU/usuario.php">Inicio</a>
-  <a href="#">Horario Docente</a>
-  <a href="#">Cursos</a>
+  <a href="../MantBasic/ver_horario.php">Horario Docente</a>
+  <a href="../MantBasic/ver_cursos.php">Cursos</a>
   <a href="../excelreader/subjefe.php">Subir Jefe Carrera</a>
   <a href="../excelreader/subprofesor.php">Subir Profesor</a>
   <a href="../excelreader/subcurso.php">Subir Curso</a>
   <a href="../excelreader/subhorario.php">Subir Horario</a>
-  <a href="#">Profesores</a>
+  <a href="../MantCuenta/Profesor.php">Profesores</a>
   <a href="../Gestores/ver_estu.php">Gestion Estudiante</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
@@ -155,6 +156,7 @@ if ($tipo == 1) {
   <a href="../Profesor/ver_cur_asistencia.php">Cursos</a>
   <a href="../Profesor/ver_asistencia.php">Listado Asistencia</a>
   <a href="../Profesor/ver_horario.php">Horario</a>
+  <a href="../descargalistados/descargaEstasist.php">Descargar Listado Estasist</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
 

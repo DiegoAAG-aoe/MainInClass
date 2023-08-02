@@ -8,7 +8,7 @@ include ('../conexion.php');
 
 
 if (isset($submit)) {
-    $query = "insert into profesor(Prof_Rut, Prof_Nombre, Prof_Correo, Prof_Contrasena) values('$Prof_Rut', '$Prof_Nombre','$Prof_Correo', '$Prof_Contrasena')";
+    $query = "insert into profesor(Prof_Rut, Prof_Nom, Prof_Correo, Prof_contrasena) values('$Prof_Rut', '$Prof_Nom','$Prof_Correo', '$Prof_contrasena')";
     $r = mysqli_query($conexion, $query);
 
     //En caso de ingresarse de manera correcta se guardara dentro de msg un mensaje de confirmacion de ingreso.
@@ -56,14 +56,13 @@ if (isset($submit)) {
 
                                 <div class="col-lg-8 col-md-2 col-sm-3 col-xs-6">
                                     <div class="form-group form-float">
-                                        <div class="form-line">
-                                            <input required type="text" name="Prof_Nombre" class="form-control">
-                                            <label class="form-label">Nombre del Profesor</label>
-                                        </div>
-
-                                        <div class="form-line">
+                                    <div class="form-line">
                                             <input required type="text" name="Prof_Rut" class="form-control">
                                             <label class="form-label">Rut Profesor</label>
+                                        </div>    
+                                    <div class="form-line">
+                                            <input required type="text" name="Prof_Nom" class="form-control">
+                                            <label class="form-label">Nombre del Profesor</label>
                                         </div>
 
                                         <div class="form-line">
@@ -72,7 +71,7 @@ if (isset($submit)) {
                                         </div>
 
                                         <div class="form-line">
-                                            <input required type="text" name="Adm_Contrasena" class="form-control">
+                                            <input required type="text" name="Prof_contrasena" class="form-control">
                                             <label class="form-label">Contrasena Profesor</label>
                                         </div>
 
