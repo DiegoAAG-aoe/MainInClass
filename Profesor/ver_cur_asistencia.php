@@ -89,7 +89,9 @@ $rut=$_SESSION['rut'];
                                                 href="asistencia.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">asistencia<span
                                                     class="glyphicon glyphicon-pencil"></span></a>
                                             
-                                            <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
+                                                    <a class='btn btn-info'
+                                                href="porcentaje.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">porcentaje<span
+                                                    class="glyphicon glyphicon-pencil"></span></a>
                                         </td>
                                     </tr>
                                 <?php } ?>
