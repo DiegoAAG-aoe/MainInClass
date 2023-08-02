@@ -156,6 +156,7 @@ if ($tipo == 1) {
   <a href="../Profesor/ver_cur_asistencia.php">Cursos</a>
   <a href="#">Listado Asistencia</a>
   <a href="#">Mensajes</a>
+  <a href="../Profesor/ver_horario.php">Horario</a>
   <a href="../include/logout.php">Cerrar Sesión</a>
 </div>
 

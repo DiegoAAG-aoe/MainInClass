@@ -39,7 +39,7 @@ $rut=$_SESSION['rut'];
             <div>
 
                 <div>
-                    <h2 style="text-align: center;margin-bottom:2.5rem">Cursos del Profesor</h2>
+                    <h2 style="text-align: center;margin-bottom:2.5rem">Horarios del Profesor</h2>
                 </div>
                 <div class="body">
                     <div class="table-responsive">
@@ -50,44 +50,49 @@ $rut=$_SESSION['rut'];
                                     <th>Tipo</th>
                                     <th>Seccion</th>
                                     <th>Periodo</th>
+                                    <th>Dia</th>
+                                    <th>Num Bloque</th>
+                                    <th>Hora</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php
                                 include('../include/config.php');
 
-                                $query = mysqli_query($con, "select Hor_Asignatura, Hor_Tipo, Hor_Secc, Hor_Periodo from horario where Hor_profesor='$rut'");
+                                $query = mysqli_query($con, "select * from horario where Hor_profesor='$rut'");
                                 while ($res = mysqli_fetch_array($query)) {
                                     $ide1 = $res['Hor_Asignatura'];
                                     $ide2 = $res['Hor_Tipo'];
                                     $ide3 = $res['Hor_Secc'];
                                     $ide4 = $res['Hor_Periodo'];
+                                    $ide5 = $res['Hor_Dia'];
+                                    $ide6 = $res['Hor_Num'];
+                                    $ide7 = $res['Hor_Hora'];
 
-                                 
-                                    $que = mysqli_query($con, "select * from curso where Cur_Asignatura='$ide1' AND Cur_Tipo='$ide2' AND Cur_Secc='$ide3' AND Cur_Periodo='$ide4'");
-                                    $resu = mysqli_fetch_array($que);
-                                    $id1 = $resu['Cur_Asignatura'];
-                                    $id2 = $resu['Cur_Tipo'];
-                                    $id3 = $resu['Cur_Secc'];
-                                    $id4 = $resu['Cur_Periodo'];
                                     ?>
                                     <tr>
                                         <td>
-                                            <?php echo $id1; ?>
+                                            <?php echo $ide1; ?>
                                         </td>
                                         <td>
-                                            <?php echo $id2; ?>
+                                            <?php echo $ide2; ?>
                                         </td>
                                         <td>
-                                            <?php echo $id3; ?>
+                                            <?php echo $ide3; ?>
                                         </td>
                                         <td>
-                                            <?php echo $id4; ?>
+                                            <?php echo $ide4; ?>
                                         </td>
                                         <td>
-                                            <a class='btn btn-info'
-                                                href="asistencia.php?id1=<?php echo $id1; ?>&id2=<?php echo $id2; ?>&id3=<?php echo $id3; ?>&id4=<?php echo $id4; ?>">asistencia<span
-                                                    class="glyphicon glyphicon-pencil"></span></a>
+                                            <?php echo $ide5; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $ide6; ?>
+                                        </td>
+                                        <td>
+                                            <?php echo $ide7; ?>
+                                        </td>
+                                        <td>
                                             
                                             <!-- <a class='btn btn-success' href="dashboard.php?page=c_info&id=<?php echo $id; ?>"><span class="fa fa-eye"></span></a> -->
                                         </td>

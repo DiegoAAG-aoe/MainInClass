@@ -19,7 +19,7 @@ if (empty($_POST["send"])) {
     $mail->Host = 'smtp.gmail.com';
     $mail->SMTPAuth = true;
     $mail->Username = 'inclassusach@gmail.com';
-    $mail->Password = 'kntytdhtustlenox'; // Your gmail app passwordfranciscousach85@gmail.com
+    $mail->Password = 'kntytdhtustlenox'; // Your gmail app password
     $mail->SMTPSecure = 'ssl';
     $mail->Port = 465;
     $mail->setFrom('inclassusach@gmail.com'); // Your gmail
